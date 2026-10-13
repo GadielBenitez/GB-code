@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GB Code">
+<meta name="theme-color" content="#0b1f3a">
+<title>GB Code · Cotización</title>
+<style>
+  :root{
+    --azul:#0b1f3a;
+    --azul2:#132d54;
+    --cian:#1fb6ff;
+    --cian2:#38e8c4;
+    --gris:#f4f6fb;
+    --borde:#dfe5f0;
+    --texto:#1a2433;
+    --suave:#5b6b7b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    background:var(--gris);
+    color:var(--texto);
+    line-height:1.6;
+    padding:0 0 60px;
+  }
+  .hero{
+    background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 55%,#0e2647 100%);
+    color:#fff;
+    padding:54px 24px 48px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 20%,rgba(31,182,255,.25),transparent 45%),
+               radial-gradient(circle at 15% 90%,rgba(56,232,196,.18),transparent 40%);
+  }
+  .logo{display:inline-flex;align-items:center;gap:12px;position:relative;z-index:2;}
+  .logo .mark{
+    font-size:30px;font-weight:800;letter-spacing:1px;
+    background:linear-gradient(90deg,var(--cian),var(--cian2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    border:2px solid var(--cian);border-radius:12px;padding:6px 14px;
+  }
+  .logo .name{font-size:30px;font-weight:800;letter-spacing:1px;}
+  .hero p{position:relative;z-index:2;margin-top:14px;opacity:.9;font-size:15px;letter-spacing:.5px;}
+  .tag{position:relative;z-index:2;display:inline-block;margin-top:20px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+    padding:8px 18px;border-radius:30px;font-size:13px;font-weight:600;}
+  .wrap{max-width:860px;margin:-28px auto 0;padding:0 16px;position:relative;z-index:3;}
+  .card{
+    background:#fff;border:1px solid var(--borde);border-radius:16px;
+    padding:24px 22px;margin-bottom:22px;
+    box-shadow:0 10px 30px rgba(11,31,58,.06);
+    overflow-x:auto;
+  }
+  h2{font-size:18px;color:var(--azul);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  h2::before{content:"";width:6px;height:22px;border-radius:4px;background:linear-gradient(var(--cian),var(--cian2));}
+  h3{font-size:14px;color:var(--azul2);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.5px;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  td,th{border:1px solid var(--borde);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--azul);color:#fff;font-weight:600;}
+  tr:nth-child(even) td{background:#f8fafd;}
+  td[contenteditable]{outline:none;}
+  td[contenteditable]:focus{background:#eef9ff !important;}
+  .fill:empty::before{content:"—";color:#b4bdcf;}
+  ul{list-style:none;padding:0;}
+  ul li{padding:7px 0 7px 26px;position:relative;font-size:14px;}
+  ul li::before{content:"";position:absolute;left:0;top:13px;width:9px;height:9px;border-radius:50%;
+    background:linear-gradient(var(--cian),var(--cian2));}
+  .no li::before{background:#ff6b6b;}
+  .total td{font-weight:700;color:var(--azul);background:#eef4ff !important;font-size:15px;}
+  .pay{margin-top:14px;font-size:14px;background:#eef9ff;border-left:4px solid var(--cian);
+    padding:12px 16px;border-radius:0 8px 8px 0;}
+  footer{text-align:center;margin-top:28px;font-size:13px;color:var(--suave);}
+  footer strong{color:var(--azul);}
+  @media(min-width:640px){.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}}
+  @media print{body{background:#fff;padding:0}.card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="logo"><span class="mark">GB</span><span class="name">CODE</span></div>
+    <p>Desarrollo de Software · Páginas Web · Aplicaciones</p>
+    <span class="tag">Cotización de Servicios</span>
+  </div>
+
+  <div class="wrap">
+
+    <div class="card">
+      <h2>Datos del cliente</h2>
+      <table>
+        <tr><th style="width:40%">Cliente / Empresa</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Contacto</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Correo</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Teléfono</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Fecha de cotización</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Número de cotización</th><td contenteditable>GBC-</td></tr>
+        <tr><th>Validez de la oferta</th><td contenteditable>30 días</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Resumen del proyecto</h2>
+      <table>
+        <tr><th style="width:40%">Nombre del proyecto</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Tipo de servicio</th><td contenteditable>Web / Software / App</td></tr>
+        <tr><th>Descripción general</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Objetivo principal</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Fecha estimada de inicio</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Tiempo estimado de entrega</th><td class="fill" contenteditable></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Alcance y funcionalidades</h2>
+      <table>
+        <tr><th>#</th><th>Entregable</th><th>Descripción</th><th>Horas</th><th>Precio</th></tr>
+        <tr><td>1</td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td></tr>
+        <tr><td>2</td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td></tr>
+        <tr><td>3</td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td></tr>
+        <tr><td>4</td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td></tr>
+        <tr><td>5</td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td><td class="fill" contenteditable></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Detalle según el servicio</h2>
+      <h3>Si es Página Web</h3>
+      <table>
+        <tr><th style="width:55%">Número de secciones / páginas</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Diseño (plantilla o personalizado)</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Responsive (móvil)</th><td contenteditable>Sí / No</td></tr>
+        <tr><th>Dominio y hosting incluidos</th><td contenteditable>Sí / No</td></tr>
+        <tr><th>SEO básico</th><td contenteditable>Sí / No</td></tr>
+        <tr><th>Panel de administración</th><td contenteditable>Sí / No</td></tr>
+      </table>
+      <h3>Si es Desarrollo de Software</h3>
+      <table>
+        <tr><th style="width:55%">Plataforma (web, escritorio, nube)</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Base de datos</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Integraciones / APIs</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Usuarios y roles</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Reportes</th><td class="fill" contenteditable></td></tr>
+      </table>
+      <h3>Si es Aplicación</h3>
+      <table>
+        <tr><th style="width:55%">Plataforma (iOS, Android, ambas)</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Diseño UX/UI</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Backend / servidor</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Notificaciones push</th><td contenteditable>Sí / No</td></tr>
+        <tr><th>Publicación en tiendas</th><td contenteditable>Sí / No</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Inversión</h2>
+      <table>
+        <tr><th style="width:60%">Subtotal</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Descuento</th><td class="fill" contenteditable></td></tr>
+        <tr><th>Impuestos</th><td class="fill" contenteditable></td></tr>
+        <tr class="total"><td>Total</td><td class="fill" contenteditable></td></tr>
+      </table>
+      <div class="pay"><strong>Forma de pago sugerida:</strong> 50% al iniciar, 50% a la entrega.</div>
+    </div>
+
+    <div class="card cols">
+      <div>
+        <h2>Lo que incluye</h2>
+        <ul>
+          <li>Desarrollo completo según el alcance acordado</li>
+          <li>Pruebas y correcciones antes de la entrega</li>
+          <li>Capacitación básica de uso</li>
+          <li>Soporte de 30 días posteriores a la entrega</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Lo que no incluye</h2>
+        <ul class="no">
+          <li>Funcionalidades fuera del alcance acordado</li>
+          <li>Dominio, hosting o licencias de terceros (salvo indicación)</li>
+          <li>Mantenimiento posterior al periodo de soporte</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Notas y condiciones</h2>
+      <ul>
+        <li>Esta cotización es válida por 30 días a partir de la fecha de emisión.</li>
+        <li>Cualquier cambio en el alcance puede modificar el costo y los tiempos.</li>
+        <li>Los tiempos de entrega inician una vez recibido el anticipo.</li>
+      </ul>
+    </div>
+
+    <footer>
+      <strong>GB Code</strong> · Contacto: _______ · Correo: _______
+    </footer>
+
+  </div>
+</body>
+</html>
